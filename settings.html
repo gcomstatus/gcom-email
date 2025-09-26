@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@yohns/picocss@2.2.10/css/pico.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.colors.min.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -13,19 +13,24 @@
   <body>
 
     <header class="container">
-      <nav>
+      <nav role="navigation" data-position="end" data-breakpoint="lg">
         <ul>
-          <li><a href="https://wm.gcom.net.au/" rel="nofollow">GCom Email</a></li>
+          <li><strong>GCom&nbsp;Email</strong></li>
         </ul>
-        <ul>
-          <li><a href="about.html">About</a></li>
-          <li><a href="settings.html">Settings</a></li>
-          <li><a href="news.html">News</a></li>
-          <li><a href="support.html">Support</a></li>
+        <input type="checkbox" id="nav-hamburger">
+        <label for="nav-hamburger" style="font-size: calc(var(--pico-font-size) * 1.3);" aria-label="Menu" aria-controls="nav-hamburger-list">
+          &equiv;
+        </label>
+        <ul id="nav-hamburger-list" role="list">
+          <li role="listitem"><a href="https://wm.gcom.net.au/" rel="nofollow">Webmail</a></li>
+          <li role="listitem"><a href="about-policies.html">About/Policies</a></li>
+          <li role="listitem"><a href="settings.html">Settings</a></li>
+          <li role="listitem"><a href="news-status.html">News/Status</a></li>
+          <li role="listitem"><a href="support.html">Support</a></li>
         </ul>
       </nav>
       <hgroup>
-        <h1 class="pico-color-azure-500">Settings</h1>
+        <h1 class="pico-color-azure-500">Support</h1>
       </hgroup>
     </header>
 
