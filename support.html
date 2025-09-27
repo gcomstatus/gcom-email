@@ -13,7 +13,7 @@
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <script>
       function enableSubmit() {
-        document.getElementById("input-submit").disabled = false;
+        document.getElementById("submit").disabled = false;
       }
     </script>
     <!-- /turnstile -->
@@ -52,24 +52,24 @@
       <form id="form-support">
         <fieldset>
           <section role="form">
-	          <input id="input-username" placeholder="GCom Username" aria-labelledby="label-username" type="text" autocomplete="off" required aria-required="true">
-	          <label id="label-username" for="input-username">GCom Username</label>
+	          <label id="label-username" for="Username">GCom Username</label>
+	          <input id="Username" placeholder="GCom Username" aria-labelledby="label-username" type="text" autocomplete="off" required aria-required="true">
           </section>
           <section role="form">
-	          <input id="input-email" placeholder="Contact Email" aria-labelledby="label-email" type="email" autocomplete="off" required aria-required="true">
-	          <label id="label-email" for="input-email">Contact Email</label>
+	          <label id="label-email" for="email">Contact Email</label>
+	          <input id="email" placeholder="Contact Email" aria-labelledby="label-email" type="email" autocomplete="off" required aria-required="true">
           </section>
           <section role="form">
-	          <input id="input-telephone" placeholder="Telephone" aria-labelledby="label-telephone" type="tel" autocomplete="off" required aria-required="true">
-	          <label id="label-telephone" for="input-telephone">Telephone</label>
+	          <label id="label-telephone" for="telephone">Telephone</label>
+	          <input id="telephone" placeholder="Telephone" aria-labelledby="label-telephone" type="tel" autocomplete="off" required aria-required="true">
           </section>
           <section role="form">
-	          <textarea id="textarea-message" placeholder="Message" aria-labelledby="label-message" rows="5" autocomplete="off" required aria-required="true"></textarea>
 	          <label id="textarea-message" for="textarea-message">Message</label>
+	          <textarea id="textarea-message" placeholder="Message" aria-labelledby="label-message" rows="5" autocomplete="off" required aria-required="true"></textarea>
           </section>
           <div class="cf-turnstile" data-sitekey="0x4AAAAAAB3o6gnFFpOZYwAr" data-callback="enableSubmit"></div>
         </fieldset>
-        <input id="input-submit" type="submit" value="submit" disabled>
+        <input id="submit" type="submit" value="submit" disabled>
       </form>
 
     </main>
