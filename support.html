@@ -22,20 +22,16 @@
   <body>
 
     <header class="container">
-      <nav role="navigation" data-position="end" data-breakpoint="lg">
+      <nav>
         <ul>
           <li><strong>GCom&nbsp;Email</strong></li>
         </ul>
-        <input type="checkbox" id="nav-hamburger">
-        <label for="nav-hamburger" style="font-size: calc(var(--pico-font-size) * 1.3);" aria-label="Menu" aria-controls="nav-hamburger-list">
-          &equiv;
-        </label>
-        <ul id="nav-hamburger-list" role="list">
-          <li role="listitem"><a href="https://wm.gcom.net.au/" rel="nofollow">Webmail</a></li>
-          <li role="listitem"><a href="about-policies.html">About/Policies</a></li>
-          <li role="listitem"><a href="settings.html">Settings</a></li>
-          <li role="listitem"><a href="news-status.html">News/Status</a></li>
-          <li role="listitem"><a href="support.html">Support</a></li>
+        <ul>
+          <li><a href="https://wm.gcom.net.au/" rel="nofollow">Webmail</a></li>
+          <li><a href="about-policies.html">About/Policies</a></li>
+          <li><a href="settings.html">Settings</a></li>
+          <li><a href="news-status.html">News/Status</a></li>
+          <li><a href="support.html">Support</a></li>
         </ul>
       </nav>
       <hgroup>
@@ -64,10 +60,10 @@
           <label>
             Contact Email
             <input
-              name="contact_ezail"
+              name="contact_email"
               placeholder="Contact Email"
               autocomplete="off"
-              type="ezail"
+              type="email"
               required
             >
           </label>
