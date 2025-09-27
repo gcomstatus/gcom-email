@@ -17,7 +17,34 @@
       }
     </script>
     <!-- /turnstile -->
-   </head>
+    <!-- emailjs -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init({
+              publicKey: "NZLFHlurkOYdJ4cs6",
+            });
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('form-support').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // these IDs from the previous steps
+                emailjs.sendForm('contact_service', 'form-submit', this)
+                    .then(() => {
+                        alert('SUCCESS');
+                        console.log('SUCCESS!');
+                    }, (error) => {
+                        alert('FAILED...', error);
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
+  <!-- /emailjs -->
+  </head>
   <body>
 
     <header class="container">
@@ -69,7 +96,7 @@
           </section>
           <div class="cf-turnstile" data-sitekey="0x4AAAAAAB3o6gnFFpOZYwAr" data-callback="enableSubmit"></div>
         </fieldset>
-        <input id="input-submit" type="submit" value="Submit" disabled>
+        <input id="input-submit" type="submit" value="Submit" xdisabled>
       </form>
 
     </main>
