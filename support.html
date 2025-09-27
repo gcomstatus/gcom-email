@@ -9,6 +9,12 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <title>Support</title>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    <script>
+      function enableSubmit() {
+        document.getElementById("input-submit").disabled = false;
+      }
+    </script>
   </head>
   <body>
 
@@ -38,55 +44,30 @@
 
       <h3 class="pico-color-pink-500">Important</h3>
       <p>Please log support requests only via the form below.</p>
-      <p>Telephone support is not available for the free gcom.net.au service.</p>
+      <p>Telephone and direct email support are not available for the free gcom.net.au service.</p>
 
       <h3 class="pico-color-pink-500">Log a Support Request</h3>
       <form>
         <fieldset>
-          <label>
-            GCom User Name
-            <input
-              name="gcom_user`_name"
-              placeholder="GCom User Name"
-              autocomplete="off"
-              required
-            >
-          </label>
-          <label>
-            Contact Email
-            <input
-              name="contact_email"
-              placeholder="Contact Email"
-              autocomplete="off"
-              type="email"
-              required
-            >
-          </label>
-          <label>
-            Telephone
-            <input
-              name="telephone"
-              placeholder="Telephone"
-              autocomplete="off"
-              type="tel"
-              required
-            >
-          </label>
-          <label>
-            Message
-            <textarea
-              name="message"
-              placeholder="Message"
-              rows="5"
-              required
-            ></textarea>
-          </label>
+          <section role="form">
+	          <input id="input-username" placeholder="GCom Username" aria-labelledby="label-username" autocomplete="off" required aria-required=""true">
+	          <label id="label-username" for="input-username">GCom Username</label>
+          </section>
+          <section role="form">
+	          <input id="input-email" placeholder="Contact Email" aria-labelledby="label-email" type="email" autocomplete="off" required aria-required=""true">
+	          <label id="label-email" for="input-email">Contact Email</label>
+          </section>
+          <section role="form">
+	          <input id="input-telephone" placeholder="Telephone" aria-labelledby="label-telephone" type="tel" autocomplete="off" required aria-required=""true">
+	          <label id="label-telephone" for="input-telephone">Telephone</label>
+          </section>
+          <section role="form">
+	          <textarea id="textarea-message" placeholder="Message" aria-labelledby="label-message" rows="5" autocomplete="off" required aria-required=""true"></textarea>
+	          <label id="textarea-message" for="textarea-message">Message</label>
+          </section>
+          <div class="cf-turnstile" data-sitekey="0x4AAAAAAB3nmAc3852NQjAC"></div>
         </fieldset>
-
-        <input
-          type="submit"
-          value="Submit"
-        >
+        <input id="input-submit" type="submit" value="Submit" disabled>
       </form>
 
     </main>
