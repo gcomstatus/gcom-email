@@ -89,7 +89,8 @@
             document.getElementById('form-support').addEventListener('submit', function(event) {
                 event.preventDefault();
                 // these IDs from the previous steps
-                emailjs.sendForm('service_y9cygwj', 'template_h4w6yjh', this)
+                //emailjs.sendForm('service_y9cygwj', 'template_h4w6yjh', this)
+                emailjs.sendForm('service_y9cygwj', 'template_h4w6yjh', '#form-support')
                     .then(() => {
                         alert('SUCCESS');
                         console.log('SUCCESS!');
