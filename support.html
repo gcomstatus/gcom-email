@@ -17,33 +17,6 @@
       }
     </script>
     <!-- /turnstile -->
-    <!-- emailjs -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script>
-        (function() {
-            // https://dashboard.emailjs.com/admin/account
-            emailjs.init({
-              publicKey: "NZLFHlurkOYdJ4cs6",
-            });
-        })();
-    </script>
-    <script type="text/javascript">
-        window.onload = function() {
-            document.getElementById('form-support').addEventListener('submit', function(event) {
-                event.preventDefault();
-                // these IDs from the previous steps
-                emailjs.sendForm('service_y9cygwj', 'template_h4w6yjh', this)
-                    .then(() => {
-                        alert('SUCCESS');
-                        console.log('SUCCESS!');
-                    }, (error) => {
-                        alert(error);
-                        console.log('FAILED...', error);
-                    });
-            });
-        }
-    </script>
-  <!-- /emailjs -->
   </head>
   <body>
 
@@ -79,7 +52,7 @@
       <form id="form-support">
         <fieldset>
           <section role="form">
-	          <input id="input-username" placeholder="GCom Username" aria-labelledby="label-username" autocomplete="off" required aria-required="true">
+	          <input id="input-username" placeholder="GCom Username" aria-labelledby="label-username" type="text" autocomplete="off" required aria-required="true">
 	          <label id="label-username" for="input-username">GCom Username</label>
           </section>
           <section role="form">
@@ -101,5 +74,32 @@
 
     </main>
 
+    <!-- emailjs -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init({
+              publicKey: "NZLFHlurkOYdJ4cs6",
+            });
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('form-support').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // these IDs from the previous steps
+                emailjs.sendForm('service_y9cygwj', 'template_h4w6yjh', this)
+                    .then(() => {
+                        alert('SUCCESS');
+                        console.log('SUCCESS!');
+                    }, (error) => {
+                        alert(error);
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
+    <!-- /emailjs -->
   </body>
 </html>
