@@ -32,7 +32,7 @@
             document.getElementById('form-support').addEventListener('submit', function(event) {
                 event.preventDefault();
                 // these IDs from the previous steps
-                emailjs.sendForm('contact_service', 'form-submit', this)
+                emailjs.sendForm('form-submit', this)
                     .then(() => {
                         alert('SUCCESS');
                         console.log('SUCCESS!');
