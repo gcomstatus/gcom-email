@@ -9,12 +9,42 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <title>Support</title>
+
+    <!-- turnstile -->
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <script>
       function enableSubmit() {
         document.getElementById("input-submit").disabled = false;
       }
     </script>
+    <!-- /turnstile -->
+
+    <!-- emailjs -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init({
+              publicKey: "NZLFHlurkOYdJ4cs6",
+            });
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // these IDs from the previous steps
+                emailjs.sendForm('contact_service', 'form-support', this)
+                    .then(() => {
+                        console.log('SUCCESS!');
+                    }, (error) => {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
+    <!-- /emailjs -->
+
   </head>
   <body>
 
@@ -47,7 +77,7 @@
       <p>Telephone and direct email support are not available for the free gcom.net.au service.</p>
 
       <h3 class="pico-color-pink-500">Log a Support Request</h3>
-      <form>
+      <form id="form-support">
         <fieldset>
           <section role="form">
 	          <input id="input-username" placeholder="GCom Username" aria-labelledby="label-username" autocomplete="off" required aria-required=""true">
@@ -67,7 +97,7 @@
           </section>
           <div class="cf-turnstile" data-sitekey="0x4AAAAAAB3nmAc3852NQjAC" data-callback="enableSubmit"></div>
         </fieldset>
-        <input id="input-submit" type="submit" value="Submit" disabled>
+        <input id="input-submit" type="submit" value="Send" disabled>
       </form>
 
     </main>
