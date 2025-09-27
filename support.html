@@ -49,7 +49,30 @@
       <p>Telephone and direct email support are not available for the free gcom.net.au service.</p>
 
       <h3 class="pico-color-pink-500">Log a Support Request</h3>
-      <form id="form-support">
+      <form>
+        <fieldset>
+          <label>
+            GCom User Name
+            <input name="gcom_user_name" placeholder="GCom User Name" autocomplete="off" type="text" required>
+          </label>
+          <label>
+            Contact Email
+            <input name="contact_email" placeholder="Contact Email" autocomplete="off" type="email" required>
+          </label>
+          <label>
+            Telephone
+            <input name="telephone" placeholder="Telephone" autocomplete="off" type="tel" required>
+          </label>
+          <label>
+            Message
+            <textarea name="message" placeholder="Message" rows="5" required></textarea>
+          </label>
+          <div class="cf-turnstile" data-sitekey="0x4AAAAAAB3o6gnFFpOZYwAr" data-callback="enableSubmit"></div>
+        </fieldset>
+        <input id="submit" type="submit" value="Submit">
+      </form>
+
+      <!-- form id="form-support">
         <fieldset>
           <section role="form">
 	          <label id="label-username" for="Username">GCom Username</label>
@@ -70,7 +93,7 @@
           <div class="cf-turnstile" data-sitekey="0x4AAAAAAB3o6gnFFpOZYwAr" data-callback="enableSubmit"></div>
         </fieldset>
         <input id="submit" type="submit" value="submit" disabled>
-      </form>
+      </form -->
 
     </main>
 
