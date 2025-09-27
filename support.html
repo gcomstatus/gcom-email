@@ -9,7 +9,6 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <title>Support</title>
-
     <!-- turnstile -->
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <script>
@@ -18,35 +17,6 @@
       }
     </script>
     <!-- /turnstile -->
-
-    <!-- emailjs -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function() {
-            // https://dashboard.emailjs.com/admin/account
-            emailjs.init({
-              publicKey: "NZLFHlurkOYdJ4cs6",
-            });
-        })();
-    </script>
-    <script type="text/javascript">
-        window.onload = function() {
-            document.getElementById('form-support').addEventListener('submit', function(event) {
-                event.preventDefault();
-                // these IDs from the previous steps
-                emailjs.sendForm('contact_service', 'form-support', this)
-                    .then(() => {
-                        alert('SUCCESS');
-                        console.log('SUCCESS!');
-                    }, (error) => {
-                        alert('FAILED...', error);
-                        console.log('FAILED...', error);
-                    });
-            });
-        }
-    </script>
-    <!-- /emailjs -->
-
   </head>
   <body>
 
@@ -86,20 +56,20 @@
 	          <label id="label-username" for="input-username">GCom Username</label>
           </section>
           <section role="form">
-	          <input id="input-email" placeholder="Contact Email" aria-labelledby="label-email" required">
+	          <input id="input-email" placeholder="Contact Email" aria-labelledby="label-email" type="email" autocomplete="off" required aria-required="true">
 	          <label id="label-email" for="input-email">Contact Email</label>
           </section>
           <section role="form">
-	          <input id="input-telephone" placeholder="Telephone" aria-labelledby="label-telephone" type="tel" autocomplete="off" required>
+	          <input id="input-telephone" placeholder="Telephone" aria-labelledby="label-telephone" type="tel" autocomplete="off" required aria-required="true">
 	          <label id="label-telephone" for="input-telephone">Telephone</label>
           </section>
           <section role="form">
-	          <textarea id="textarea-message" placeholder="Message" aria-labelledby="label-message" rows="5" autocomplete="off" required></textarea>
+	          <textarea id="textarea-message" placeholder="Message" aria-labelledby="label-message" rows="5" autocomplete="off" required aria-required="true"></textarea>
 	          <label id="textarea-message" for="textarea-message">Message</label>
           </section>
           <div class="cf-turnstile" data-sitekey="0x4AAAAAAB3nmAc3852NQjAC" data-callback="enableSubmit"></div>
         </fieldset>
-        <input id="input-submit" type="submit" value="Send" disabled>
+        <input id="input-submit" type="submit" value="Submit" disabled>
       </form>
 
     </main>
