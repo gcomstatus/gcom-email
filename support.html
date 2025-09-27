@@ -57,19 +57,13 @@
       <form>
         <fieldset>
           <label>Username</label>
-            <input name="Username" placeholder="" autocomplete="off" type="text" required>
-          <label>
-            Email
-            <input name="Email" placeholder=""" autocomplete="off" type="email" required>
-          </label>
-          <label>
-            Telephone
-            <input name="Telephone" placeholder="" autocomplete="off" type="tel" required>
-          </label>
-          <label>
-            Message
-            <textarea name="Message" placeholder="" rows="5" required></textarea>
-          </label>
+          <input name="Username" placeholder="" autocomplete="off" type="text" minlength="2" required>
+          <label>Email</label>
+          <input name="Email" placeholder=""" autocomplete="off" type="email" required>
+          <label>Telephone</label>
+          <input name="Telephone" placeholder="" autocomplete="off" type="tel" required>
+          <label>Message</label>
+          <textarea name="Message" placeholder="" rows="5" minlength="20" required></textarea>
           <!-- div class="cf-turnstile" data-sitekey="0x4AAAAAAB3o6gnFFpOZYwAr" data-callback="enableSubmit"></div -->
         </fieldset>
         <input id="submit" type="submit" value="Submit">
