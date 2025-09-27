@@ -36,8 +36,10 @@
                 // these IDs from the previous steps
                 emailjs.sendForm('contact_service', 'form-support', this)
                     .then(() => {
+                        alert('SUCCESS');
                         console.log('SUCCESS!');
                     }, (error) => {
+                        alert('FAILED...', error);
                         console.log('FAILED...', error);
                     });
             });
